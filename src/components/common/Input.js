@@ -1,23 +1,23 @@
-import React from 'react'
-import { Text, View, TextInput } from 'react-native'
+import React from 'react';
+import { TextInput, View, Text } from 'react-native';
 
 const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
-  const { inputStyle, labelStyle, containerStyle } = styles
+  const { inputStyle, labelStyle, containerStyle } = styles;
 
   return (
-    <View style={containerStyle}> 
+    <View style={containerStyle}>
       <Text style={labelStyle}>{label}</Text>
       <TextInput
         secureTextEntry={secureTextEntry}
         placeholder={placeholder}
-        autoCorrect={false} // disables autocorrect
+        autoCorrect={false}
+        style={inputStyle}
         value={value}
         onChangeText={onChangeText}
-        style={inputStyle}
       />
     </View>
-  )
-}
+  );
+};
 
 const styles = {
   inputStyle: {
@@ -39,7 +39,8 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center'
   }
-}
+};
+
+export { Input };
 // flex property is how we allocate space to each sibling. 
 // for the above it means 2/3rds of space allocated to input and 1/3 allocated to label style
-export { Input }
