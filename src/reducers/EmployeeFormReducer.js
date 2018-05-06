@@ -1,5 +1,6 @@
 import {
-  EMPLOYEE_UPDATE
+  EMPLOYEE_UPDATE,
+  EMPLOYEE_CREATE
 } from '../actions/types'
 
 const INITITAL_STATE = {
@@ -14,6 +15,8 @@ export default (state = INITITAL_STATE, action) => {
       // action.payload === { prop: 'name', value: 'jane' }
       // square braces are not an array, they are for key interpolation
       return { ...state, [action.payload.prop]: action.payload.value }
+    case EMPLOYEE_CREATE:
+      return INITITAL_STATE
     default:
       return state
   }
